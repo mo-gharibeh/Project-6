@@ -1,0 +1,74 @@
+﻿@model E_commerce.Models.User
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_EStart.cshtml";
+}
+
+<div class="background-image">
+    <div class="form-container">
+        <h2 class="text-center mb-4">Login</h2>
+        <p class="text-center">Welcome back, please login to your account</p>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true, "Passwords do not match.", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Username)
+                @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "User Name" })
+                @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Your Password" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="acceptance">
+                <label class="form-check-label" for="acceptance">Remember me.</label>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+            <div class="text-center mt-3">
+                <span>New User? </span><a href="@Url.Action("Register", "User")">Register</a>
+            </div>
+        }
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<style>
+
+    .form-container {
+        background: rgba(233, 210, 182, 0.6);
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="password"] {
+            margin-bottom: 15px;
+        }
+
+        .form-container input[type="checkbox"] {
+            margin-bottom: 15px;
+        }
+
+        .form-container button {
+            margin-right: 10px;
+        }
+
+    .background-image {
+        background-image: url('../../images/backimg.png');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>

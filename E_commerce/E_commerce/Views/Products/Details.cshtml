@@ -1,0 +1,42 @@
+﻿@model E_commerce.Models.Product
+
+@{
+    ViewBag.Title = "Product Details";
+    Layout = "~/Views/Shared/_EStart.cshtml";
+}
+
+<h2 class="text-center">@Model.ProductName Details</h2>
+
+<div class="card mb-4 shadow-sm">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img src="@Url.Content(Model.Image)" class="card-img" alt="@Model.ProductName">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h3 class="card-title">@Model.ProductName</h3>
+                <p class="card-text"><strong>Description: </strong>@Model.Description</p>
+                <p class="card-text"><strong>Price: </strong>@Model.Price $</p>
+                <p class="card-text"><strong>Quantity: </strong>@Model.Quantity</p>
+                <p class="card-text"><strong>Category: </strong>@Model.Category.CategoryName</p>
+                <div class="text-right">
+                    @if (Session["name"] == "0")
+                    {
+
+                        @Html.ActionLink("Add To Cart", "Create", "CartItems", new { id = Model.ProductID, userId = Session["UserID"] }, new { @class = "btn btn-primary mr-2" })
+                    }
+                        @Html.ActionLink("Back ", "Shop", "Products", new { @class = "btn btn-secondary" })
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .card-img {
+        height: 60vh;
+        padding-left: 30%;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        
+    }
+</style>

@@ -1,0 +1,254 @@
+﻿/* Set padding to keep content from hitting the edges */
+.body-content {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Content/Site.css */
+
+/* Navbar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d6c4ae;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+    nav ul li {
+        display: inline;
+    }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #603f23;
+            font-weight: bold;
+        }
+
+/* Footer Styles */
+footer {
+    background-color: #d6c4ae;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer-nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+    .footer-nav ul li a {
+        text-decoration: none;
+        color: #603f23;
+    }
+
+.footer-contact ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+    .footer-contact ul li {
+        margin: 5px 0;
+    }
+
+        .footer-contact ul li a {
+            text-decoration: none;
+            color: #603f23;
+        }
+
+.footer-map img {
+    width: 100px;
+    height: auto;
+}
+
+
+/* Button Base Style */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Login Button Style */
+.btn-login {
+    background-color: #603f23;
+    color: #ffffff;
+    border: 2px solid #603f23;
+}
+
+    .btn-login:hover {
+        background-color: #ffffff;
+        color: #603f23;
+    }
+
+/* Register Button Style */
+.btn-register {
+    background-color: #d6c4ae;
+    color: #603f23;
+    border: 2px solid #603f23;
+}
+
+    .btn-register:hover {
+        background-color: #603f23;
+        color: #ffffff;
+    }
+/* Navbar styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #d6c4ae;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+    nav ul li {
+        display: inline;
+    }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #603f23;
+            font-weight: bold;
+        }
+
+/* Auth buttons */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+    }
+
+        nav ul {
+            flex-direction: column;
+            width: 100%;
+            display: none;
+            text-align: center;
+        }
+
+            nav ul li {
+                display: block;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+    .menu-icon {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        color: #603f23;
+    }
+
+    .auth-buttons {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+/* Footer styles */
+footer {
+    background-color: #d6c4ae;
+    padding: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+    .footer-content > div {
+        flex: 1 1 30%;
+    }
+
+.footer-contact ul, .footer-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+    .footer-contact ul li, .footer-nav ul li {
+        margin: 5px 0;
+    }
+
+        .footer-contact ul li a, .footer-nav ul li a {
+            text-decoration: none;
+            color: #603f23;
+        }
+
+.footer-map iframe {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+img, iframe {
+    max-width: 100%;
+    height: auto;
+}

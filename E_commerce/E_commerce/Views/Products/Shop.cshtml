@@ -1,0 +1,158 @@
+﻿@model IEnumerable<E_commerce.Models.Product>
+
+@{
+    ViewBag.Title = "Shop";
+    Layout = "~/Views/Shared/_EStart.cshtml";
+
+    var pro = new E_commerce.Models.Product();
+}
+
+
+<div class="container mt-5">
+    <!-- Header Section -->
+    <div class="text-center mb-5">
+        <h1 class="display-4">Welcome to Our Shop</h1>
+        <p class="lead">Find the best products curated just for you</p>
+    </div>
+
+    <form>
+        @*<button type="button" id="allCategories" class="btn btn-outline-primary">All Categories</button>*@
+        <a href="@Url.Action("Shop", "Products", new { id = "" })" class="btn btn-outline-primary">All Categories</a>
+
+
+        @*<button type="button" id="Category1" class="btn btn-outline-primary">Donuts</button>*@
+        <a href="@Url.Action("Shop", "Products", new { id = 1 })" class="btn btn-outline-primary">Donuts</a>
+
+
+        @*<button type="button" id="Category2" class="btn btn-outline-primary">Cheesecake</button>*@
+        <a href="@Url.Action("Shop", "Products", new { id = 2 })" class="btn btn-outline-primary">Cheesecake</a>
+
+
+        @*<button type="button" id="Category3" class="btn btn-outline-primary">Pancake</button>*@
+        <a href="@Url.Action("Shop", "Products", new { id = 3 })" class="btn btn-outline-primary">Pancake</a>
+
+        <input type="hidden" name="selectedCategory" id="selectedCategory" value="all" />
+    </form>
+    <br />
+    <br />
+    <!-- Product Cards Section -->
+    <div class="row">
+
+        @foreach (var product in Model)
+        {
+
+            <div class="col-md-4 mb-4">
+                <div class="card modern-card h-100">
+                    <img src="@product.Image" class="card-img-top" alt="@product.ProductName">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">@product.ProductName</h5>
+                        <p class="card-text text-center">@product.Description</p>
+                        <p class="card-text text-center text-muted">$@product.Price</p>
+                        <div class="mt-auto text-center">
+
+                            <a href="@Url.Action("Details", "Products", new { id = product.ProductID })" class="btn btn-primary btn-modern">View Details</a>
+                            @if (Session["name"] == "0")
+                            {
+                                <a href="@Url.Action("Create", "CartItems", new { id = product.ProductID, userId = Session["UserID"] })" class="btn btn-primary btn-modern">Add To Cart</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Optional: Add custom styling here -->
+<style>
+    .modern-card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+        .modern-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .modern-card img {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+    .btn-modern {
+        border-radius: 30px;
+        padding: 10px 20px;
+    }
+</style>
+
+<!-- Add this script reference if not already included -->
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+}
+
+
+
+
+
+
+@*<h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.CategoryName)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ProductID })
+            </td>
+        </tr>
+    }
+
+    </table>*@
