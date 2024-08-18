@@ -78,7 +78,7 @@ namespace E_commerce.Controllers
         public ActionResult Logout()
         {
             Session["name"] = "1";
-            return RedirectToAction("Home", "Category");
+            return RedirectToAction("Home", "Categories");
         }
         [HttpPost]
         public ActionResult Login(FormCollection form)

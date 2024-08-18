@@ -23,8 +23,7 @@ namespace E_commerce.Controllers
 
         public ActionResult Cart(int? id)
         {
-            // افترض أنك تحصل على UserID من الجلسة أو من مصدر آخر
-            //int userId = ...;  وضع الكود المناسب للحصول على UserID للمستخدم الحالي
+          
 
             // الحصول على السلة والعناصر المرتبطة بها
             var cartItems = db.Carts

@@ -22,6 +22,11 @@
                 <li><a href="@Url.Action("Shop", "Products", new { id = "" })">Shop</a></li>
                 <li><a href="@Url.Action("About", "Home")">About</a></li>
                 @*<li><a href="@Url.Action("Basket", "Home")">Cart</a></li>*@
+                @if (Session["name"] == "0")
+                {
+                    <li><a href="@Url.Action("Details", "Profile", new { id = Session["UserID"]  })">Profile</a></li>
+
+                }
             </ul>
             <div class="auth-buttons">
                 @if (Session["name"] == "0")

@@ -133,6 +133,7 @@
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -206,6 +207,7 @@
     <Content Include="images\Lotus Donut.jpg" />
     <Content Include="images\market.png" />
     <Content Include="images\Nutella Donuts.jpg" />
+    <Content Include="images\profile.jpg" />
     <Content Include="images\shopBack.jpg" />
     <Content Include="images\Strawberry Donuts.jpg" />
     <Content Include="Models\Ecomm.Context.tt">
@@ -275,6 +277,11 @@
     <Content Include="Views\CartItems\Details.cshtml" />
     <Content Include="Views\CartItems\Edit.cshtml" />
     <Content Include="Views\CartItems\Cart.cshtml" />
+    <Content Include="Views\Profile\Create.cshtml" />
+    <Content Include="Views\Profile\Delete.cshtml" />
+    <Content Include="Views\Profile\Details.cshtml" />
+    <Content Include="Views\Profile\Edit.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
